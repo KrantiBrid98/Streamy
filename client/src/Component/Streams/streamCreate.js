@@ -4,10 +4,11 @@ import { Field, reduxForm } from 'redux-form'
 class streamCreate extends React.Component {
     inputRender = (formProps) => {
         return (
-            <div className={formProps.error ? 'feild error' : 'feild'}>
+            <div className={formProps.error ? 'feild error' : 'feild'} style={{margin: '10px'}}>
                 <label >{formProps.label}</label>
                 <input {...formProps.input} autoCorrect='off' />
                 {this.renderError(formProps.meta)}
+                {/* formProps.meta is a valur provided by redux form which contains the error value*/}
             </div>
         ) // onChange={formProps.input.onChange} value={formProps.input.value}
     }
@@ -15,7 +16,10 @@ class streamCreate extends React.Component {
     renderError = (meta) => {
         if (meta.touched && meta.error) {
             return (
-                <div className='ui error message'>
+                <div style={{
+                    color: 'red',
+                    marginBottom: '30px'
+                }}>
                     <div className='header'>
                         {meta.error}
                     </div>
@@ -31,13 +35,13 @@ class streamCreate extends React.Component {
     render() {
         // this.props.handleSubmit() is a callback function provided by redux-form )
         return (
-            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
+            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui formContainer form error">
                 <div>
-                    <label className="ui dividing header">Create a stream</label><br /><br />
-                    <div>
+                    <label className="ui dividing header" style={{color: 'white', fontFamily: 'sans-serif'}}>Create a stream</label><br /><br />
+                    <div className='font' >
                         <Field name='title' component={this.inputRender} label="Enter Title" />
                     </div>
-                    <div>
+                    <div className='font' >
                         <Field name='description' component={this.inputRender} label="Enter Description" />
                     </div>
                     <div>
@@ -54,11 +58,10 @@ const validate = (formValues) => {
     let error = {}
     console.log(formValues.title, formValues.description)
     if (!formValues.title) {
-        console.log('here')
-        error.title = 'Enter a title' //error.<key>, key should be same as the name of the field for which validation is to be done
+        error.title = 'title should not be blank' //error.<key>, key should be same as the name of the field for which validation is to be done
     }
     if (!formValues.description) {
-        error.description = 'Enter a description'
+        error.description = 'description should not be blank'
     }
 
     console.log(error, 'errorObj')

@@ -6,12 +6,13 @@ import streamEdit from './Streams/streamEdit'
 import streamList from './Streams/streamList'
 import streamShow from './Streams/streamShow'
 import Header from './Header';
+import '../Styles/styles.css';
 
 const App = () => {
     return (
-        <div className='ui container'>
+        <div className='ui container base'>
             <BrowserRouter>
-                <div>
+                <div className='background base'>
                     <Header />
                     <Route path='/' exact component={streamList} />
                     <Route path='/streams/new' component={streamCreate} />

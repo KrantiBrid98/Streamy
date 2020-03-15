@@ -1,0 +1,15 @@
+.background {
+    background-image: url('../assets/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.base {    
+    height: 100%;
+}
+
+.font {
+    color: whitesmoke;
+    font-family: sans-serif;
+}
