@@ -1,10 +1,12 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { STREAMCREATE } from '../../Actions'
+import { connect } from 'react-redux'
 
 class streamCreate extends React.Component {
     inputRender = (formProps) => {
         return (
-            <div className={formProps.error ? 'feild error' : 'feild'} style={{margin: '10px'}}>
+            <div className={formProps.error ? 'feild error' : 'feild'} style={{ margin: '10px' }}>
                 <label >{formProps.label}</label>
                 <input {...formProps.input} autoCorrect='off' />
                 {this.renderError(formProps.meta)}
@@ -29,15 +31,16 @@ class streamCreate extends React.Component {
     }
 
     onSubmit = (formValues) => {
-        console.log(formValues, 'form')
+        this.props.STREAMCREATE(formValues)
+        console.log(this.props.STREAMCREATE(), formValues, 'this.props')
     }
 
     render() {
-        // this.props.handleSubmit() is a callback function provided by redux-form )
+        // this.props.handleSubmit() is a callback function provided by redux-form which accepts our function as a parameter)
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui formContainer form error">
                 <div>
-                    <label className="ui dividing header" style={{color: 'white', fontFamily: 'sans-serif'}}>Create a stream</label><br /><br />
+                    <label className="ui dividing header" style={{ color: 'white', fontFamily: 'sans-serif' }}>Create a stream</label><br /><br />
                     <div className='font' >
                         <Field name='title' component={this.inputRender} label="Enter Title" />
                     </div>
@@ -68,8 +71,14 @@ const validate = (formValues) => {
     return error;
 }
 
-export default reduxForm({
+const Form = reduxForm({
     form: 'streamCreate',
     validate // validate function will be called when the form initially renders & each time user interacts with the form
 })(streamCreate)
 // redux form will start storing data in state with streamCreate as key
+
+// const mapStateToProps = (state) => {
+//     console.log(state, 'sate')
+// }
+
+export default connect(null, { STREAMCREATE })(Form)

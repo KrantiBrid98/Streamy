@@ -5,11 +5,12 @@ import App from './Component/App.js'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from './Reducer'
+import reduxThunk from 'redux-thunk';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 var store = createStore(
     reducer,
-    composeEnhancers(applyMiddleware())
+    composeEnhancers(applyMiddleware(reduxThunk))
 )
 
 ReactDOM.render(

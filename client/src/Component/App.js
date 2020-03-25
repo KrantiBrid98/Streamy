@@ -10,7 +10,7 @@ import '../Styles/styles.css';
 
 const App = () => {
     return (
-        <div className='ui container base'>
+        <div className='ui container base' style={{width: '100%'}}>
             <BrowserRouter>
                 <div className='background base'>
                     <Header />
