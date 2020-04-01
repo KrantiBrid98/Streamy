@@ -14,10 +14,10 @@ export default (state = initialState, action) => {
             ...state, [action.payload.id]: action.payload
         }
         case 'DELETESTREAM':
-            return _.omit(state, state.payload)
+            return _.omit(state, action.payload)
 
         case 'FETCHSTREAMS': return {
-            ...state, ..._.mapKeys(state, state.payload.id)
+            ...state, ..._.mapKeys(action.payload, 'id')
         }
         default: return state;
     }

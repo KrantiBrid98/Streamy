@@ -16,34 +16,34 @@ export const SIGN_OUT = () => {
 export const CREATESTREAM = formVal => async dispatch => {
     const response = await streams.post('/streams', formVal)
     console.log(response)
-    return {
+    dispatch({
         type: 'CREATESTREAM',
         payload: response
-    }
+    })
 }
 
 export const FETCHSTREAMS = () => async dispatch => {
     const response = await streams.get('/streams')
-    return {
+    dispatch({
         type: 'FETCHSTREAMS',
         payload: response
-    }
+    })
 }
 
 export const FETCHSTREAM = id => async dispatch => {
     const response = await streams.get(`/stream/${id}`)
-    return {
+    dispatch({
         type: 'FETCHSTREAM',
         payload: response
-    }
+    })
 }
 
 export const UPDATESTREAM = (id, formVal) => async dispatch => {
     const response = await streams.put(`/stream/${id}`, formVal)
-    return {
+    dispatch({
         type: 'UPDATESTREAM',
         payload: response
-    }
+    })
 }
 
 export const DELETESTREAM = id => async dispatch => {
