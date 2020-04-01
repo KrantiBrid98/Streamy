@@ -1,0 +1,6 @@
+server is just like an online api that we use to get information
+Through client, we make a request to our server for json data through axios
+https://github.com/KrantiBrid98/Streamy/blob/master/client/src/api/index.js
+https://github.com/KrantiBrid98/Streamy/blob/master/client/src/Actions/index.js#L17
+
+through actions we will get the data from the api and then asusual we will use the action to dispatch it to reducer and reducer will store the data received from action's payload to save it to redux store.

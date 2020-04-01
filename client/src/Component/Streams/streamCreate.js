@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { STREAMCREATE } from '../../Actions'
+import { CREATESTREAM } from '../../Actions'
 import { connect } from 'react-redux'
 
 class streamCreate extends React.Component {
@@ -30,10 +30,7 @@ class streamCreate extends React.Component {
         }
     }
 
-    onSubmit = (formValues) => {
-        this.props.STREAMCREATE(formValues)
-        console.log(this.props.STREAMCREATE(), formValues, 'this.props')
-    }
+    onSubmit = formValues => this.props.CREATESTREAM(formValues)
 
     render() {
         // this.props.handleSubmit() is a callback function provided by redux-form which accepts our function as a parameter)
@@ -77,8 +74,5 @@ const Form = reduxForm({
 })(streamCreate)
 // redux form will start storing data in state with streamCreate as key
 
-// const mapStateToProps = (state) => {
-//     console.log(state, 'sate')
-// }
 
-export default connect(null, { STREAMCREATE })(Form)
+export default connect(null, { CREATESTREAM })(Form)

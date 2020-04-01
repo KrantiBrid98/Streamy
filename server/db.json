@@ -1,1 +1,24 @@
-{}
+{
+  "streams": [
+    {
+      "title": "game",
+      "description": "play",
+      "id": 1
+    },
+    {
+      "title": "game",
+      "description": "play",
+      "id": 2
+    },
+    {
+      "title": "game",
+      "description": "play",
+      "id": 3
+    },
+    {
+      "title": "game",
+      "description": "play",
+      "id": 4
+    }
+  ]
+}
