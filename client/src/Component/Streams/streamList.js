@@ -42,6 +42,7 @@ class streamList extends React.Component {
     onButtonClick = () => {
         console.log('button clicked')
     }
+    
     render() {
         return (
             <Fragment>
