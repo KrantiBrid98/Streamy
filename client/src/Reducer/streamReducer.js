@@ -1,8 +1,6 @@
 import _ from 'lodash';
 
-const initialState = {}
-export default (state = initialState, action) => {
-    console.log(action, 'FETCHSTREAMS')
+export default (state = {}, action) => {
     switch (action.type) {
         case 'FETCHSTREAM': return {
             ...state, [action.payload.id]: action.payload
@@ -17,7 +15,7 @@ export default (state = initialState, action) => {
             return _.omit(state, action.payload)
 
         case 'FETCHSTREAMS': return {
-            ...state, ..._.mapKeys(action.payload, 'id')
+            ...state, ..._.mapKeys(action.payload, 'id') // to convert array into object formal with key as id and value as action.payload
         }
         default: return state;
     }

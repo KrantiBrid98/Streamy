@@ -1,23 +1,27 @@
 {
   "streams": [
     {
-      "title": "game",
-      "description": "play",
+      "title": "pubg",
+      "description": "Guns and enemies",
+      "userId": "108205267498488157917",
       "id": 1
     },
     {
-      "title": "game",
-      "description": "play",
+      "title": "ludo",
+      "description": "Dice and coins",
+      "userId": "108205267498488157917",
       "id": 2
     },
     {
-      "title": "game",
-      "description": "play",
+      "title": "my game",
+      "description": "Fun",
+      "userId": "108205267498488157917",
       "id": 3
     },
     {
-      "title": "game",
-      "description": "play",
+      "title": "B)",
+      "description": "B)",
+      "userId": "108205267498488157917",
       "id": 4
     }
   ]

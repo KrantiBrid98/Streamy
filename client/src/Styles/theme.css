@@ -9,6 +9,16 @@
     height: 100%;
 }
 
+.basicMargin {
+    margin-left: 5%;
+}
+
+.inputWrap {
+    color: 'white';
+    margin: 5px;
+    word-wrap: break-word;
+    width: 60%;
+}
 .font {
     color: whitesmoke;
     font-family: sans-serif;
