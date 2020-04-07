@@ -9,7 +9,6 @@ class streamList extends React.Component {
     }
 
     renderAdmin = (stream) => {
-        console.log(stream.userId, this.props.currentUserId)
         if (stream.userId && stream.userId === this.props.currentUserId) {
             return (
                 <div>

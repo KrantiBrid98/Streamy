@@ -22,10 +22,13 @@ class streamEdit extends Component {
         }
         return (
             <Fragment>
-                <div><StreamForm
-                    text='Edit a stream'
-                    initialValues={{ title: this.props.stream.title, description: this.props.stream.description }}
-                    onSubmitCallBack={this.onSubmit} /></div>
+                <div>
+                    <StreamForm
+                        text='Edit a stream'
+                        initialValues={{ title: this.props.stream.title, description: this.props.stream.description }}
+                        onSubmitCallBack={this.onSubmit}
+                    />
+                </div>
             </Fragment>
         )
     }

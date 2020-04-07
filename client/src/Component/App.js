@@ -20,7 +20,7 @@ const App = () => {
                     <Route path='/streams/new' component={streamCreate} />
                     <Route path='/streams/edit/:id' component={streamEdit} />  
                     {/* id could be named anything. id is something that goes into the props of streamEdit/streamDelete component */}
-                    <Route path='/streams/delete' component={streamDelete} />
+                    <Route path='/streams/delete/:id' component={streamDelete} />
                     <Route path='/streams/show' component={streamShow} />
                 </div>
             </Router>
